@@ -1,4 +1,4 @@
-image: Visual Studio 2015
+image: Visual Studio 2019
 version: '{branch}.{build}'
 
 cache:
@@ -9,16 +9,16 @@ environment:
   PHP_BUILD_CACHE_BASE_DIR: c:\build-cache
   PHP_BUILD_OBJ_DIR: c:\obj
   PHP_BUILD_CACHE_SDK_DIR: c:\build-cache\sdk
-  PHP_BUILD_SDK_BRANCH: php-sdk-2.1.9
+  PHP_BUILD_SDK_BRANCH: php-sdk-2.2.0
   SDK_REMOTE: https://github.com/Microsoft/php-sdk-binary-tools.git
-  SDK_BRANCH: php-sdk-2.1.5
+  SDK_BRANCH: php-sdk-2.2.0
 
   matrix:
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-      PHP_BUILD_CRT: vc15
-      PHP_REL: 7.4
-      ARCHITECTURES: x86
-      ZTS_STATES: enable
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      PHP_BUILD_CRT: vs16
+      PHP_REL: 8.0
+      ARCHITECTURES: x64
+      ZTS_STATES: disable
 
 install:
   - appveyor\install.cmd
